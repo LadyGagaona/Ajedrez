@@ -42,7 +42,7 @@ public class ChessBoardPanel extends JPanel {
                         return;
                     }
 
-                    // SI ESTÁS EN JAQUE → impedir mover la pieza (solo alerta)
+                    // SI ESTÁS EN JAQUE
                     if (game.isInCheck(game.whiteTurn)) {
                         JOptionPane.showMessageDialog(ChessBoardPanel.this,
                                 "Estás en JAQUE.",
