@@ -6,30 +6,31 @@ public class Main {
 
         SwingUtilities.invokeLater(() -> {
 
-            // ✅ Crear ventana
+
+//ventana 
+
             JFrame f = new JFrame("Ajedrez");
             f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             f.setSize(600, 700);
             f.setLayout(new BorderLayout());
 
-            // ✅ Crear estado del juego y panel del tablero
-            GameState game = new GameState();
+GameState game = new GameState();
             ChessBoardPanel board = new ChessBoardPanel(game);
 
             f.add(board, BorderLayout.CENTER);
 
-            // ✅ Panel inferior para botones
             JPanel bottom = new JPanel();
             f.add(bottom, BorderLayout.SOUTH);
 
-            // ✅ Botón de RESET
+//Ingreso de los FEN
+
             JButton resetButton = new JButton("INGRESAR");
             resetButton.setFont(new Font("Arial", Font.PLAIN, 26));
             bottom.add(resetButton);
 
             resetButton.addActionListener(ev -> {
                 // Crear opciones
-                String[] options = {"INGRESAR POSICION INICUAL", "INGRESAR FEN"};
+                String[] options = {"INGRESAR POSICION INICIAL", "INGRESAR FEN"};
                 int choice = JOptionPane.showOptionDialog(
                         f,
                         "¿Cómo deseas visualizar el tablero?",
@@ -65,7 +66,6 @@ public class Main {
                 }
             });
 
-            // ✅ Botón de HISTORIAL
             JButton historyBtn = new JButton("HISTORIAL");
             historyBtn.setFont(new Font("Arial", Font.PLAIN, 26));
             bottom.add(historyBtn);
@@ -89,8 +89,6 @@ public class Main {
 
                 JButton loadBtn = new JButton("Cargar posición");
                 dialog.add(loadBtn, BorderLayout.SOUTH);
-
-                // ✅ Cargar FEN seleccionada
                 loadBtn.addActionListener(ev -> {
                     int index = list.getSelectedIndex();
                     if (index >= 0) {
@@ -108,8 +106,6 @@ public class Main {
 
                 dialog.setVisible(true);
             });
-
-            // ✅ Mostrar ventana
             f.setVisible(true);
         });
     }
