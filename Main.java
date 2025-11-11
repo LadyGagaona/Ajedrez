@@ -29,7 +29,6 @@ GameState game = new GameState();
             bottom.add(resetButton);
 
             resetButton.addActionListener(ev -> {
-                // Crear opciones
                 String[] options = {"INGRESAR POSICION INICIAL", "INGRESAR FEN"};
                 int choice = JOptionPane.showOptionDialog(
                         f,
@@ -44,7 +43,7 @@ GameState game = new GameState();
 
                 if (choice == 0) {
                     // Reiniciar a posición inicial
-                    game.resetBoard();  // Método sin parámetros
+                    game.resetBoard();
                     game.history.clear();
                     game.history.add(game.generateFEN());
                     board.repaint();
