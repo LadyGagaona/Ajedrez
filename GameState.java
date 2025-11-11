@@ -11,6 +11,8 @@ public class GameState {
 
     private static final Map<String, String> unicodeToType = new HashMap<>();
 
+//POSICION INICIAL DEL TABLERO 
+
     static {
         unicodeToType.put("♙","P"); unicodeToType.put("♖","R");
         unicodeToType.put("♘","N"); unicodeToType.put("♗","B");
@@ -42,8 +44,7 @@ public class GameState {
         history.clear();
         history.add(generateFEN());
     }
-
-    // --- helpers ---
+
     public boolean isWhite(String p) { return p.matches("[♙♖♘♗♕♔]"); }
     public boolean isBlack(String p) { return p.matches("[♟♜♞♝♛♚]"); }
 
@@ -59,7 +60,7 @@ public class GameState {
     public String generateFEN() {
         StringBuilder sb = new StringBuilder();
 
-        // Recorremos filas de 0..7 donde 0 corresponde a la fila 8 (rank 8)
+ 
         for (int r = 0; r < 8; r++) {
             int empty = 0;
             for (int c = 0; c < 8; c++) {
@@ -73,8 +74,8 @@ public class GameState {
                     }
                     String letter = unicodeToType.get(p); // usa el mapa unicodeToType que debes tener
                     if (letter == null) {
-                        // alternativa: tratar como vacío en vez de lanzar excepción:
-                        // sb.append("?");
+                       
+                     sb.append("?");
                         throw new IllegalStateException("generateFEN: pieza desconocida -> '" + p + "' en " + r + "," + c);
                     }
                     sb.append(letter);
@@ -84,7 +85,7 @@ public class GameState {
             if (r < 7) sb.append('/');
         }
 
-        // Turno y campos placeholder (ajústalos si manejas castling/en passant/half/full)
+  
         sb.append(' ');
         sb.append(whiteTurn ? 'w' : 'b');
         sb.append(" - - 0 1");
