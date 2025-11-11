@@ -23,16 +23,16 @@ public class Main {
             f.add(bottom, BorderLayout.SOUTH);
 
             // ✅ Botón de RESET
-            JButton resetButton = new JButton("REINICIAR");
+            JButton resetButton = new JButton("INGRESAR");
             resetButton.setFont(new Font("Arial", Font.PLAIN, 26));
             bottom.add(resetButton);
 
             resetButton.addActionListener(ev -> {
                 // Crear opciones
-                String[] options = {"Posición inicial", "Ingresar FEN"};
+                String[] options = {"INGRESAR POSICION INICUAL", "INGRESAR FEN"};
                 int choice = JOptionPane.showOptionDialog(
                         f,
-                        "¿Cómo deseas reiniciar el tablero?",
+                        "¿Cómo deseas visualizar el tablero?",
                         "Reiniciar Tablero",
                         JOptionPane.DEFAULT_OPTION,
                         JOptionPane.QUESTION_MESSAGE,
