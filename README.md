@@ -20,4 +20,4 @@ Este proyecto implementa un parser para cadenas FEN (Forsyth-Edwards Notation) q
 - Git para clonar el repositorio
 
 **Enlace Del Video**
-- 
+- https://youtu.be/21nji0jBv8s?si=C_b36rZ8P-Xtz8SQ
