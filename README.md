@@ -19,5 +19,5 @@ Este proyecto implementa un parser para cadenas FEN (Forsyth-Edwards Notation) q
 - IDE recomendado: IntelliJ IDEA, Eclipse, o NetBeans
 - Git para clonar el repositorio
 
-- ##**Enlace Del Video**
+##**Enlace Del Video**
 - 
